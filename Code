@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic JavaScript Example</title>
+  <style>
+    #text {
+      color: rebeccapurple;
+      font-size: 20px;
+    }
+
+    .highlight {
+      background-color: teal;
+    }
+
+    .new-button-style {
+      background-color: goldenrod;
+      color: wheat;
+      border: 2px solid greenyellow;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="text">Katliegh WEEK5</h1>
+
+  <button onclick="changeText()">Change Text</button>
+  <button onclick="changeStyle()">Change Style</button>
+  <button onclick="toggleElement()">Add/Remove Element</button>
+
+  <div id="container"></div>
+
+  <script>
+    function changeText() {
+      const textElement = document.getElementById("text");
+      textElement.textContent = "Text Changed Dynamically!";
+    }
+
+    function changeStyle() {
+      const textElement = document.getElementById("text");
+      textElement.style.color = "red";
+      textElement.style.fontSize = "30px";
+      textElement.classList.toggle("highlight");
+    }
+
+    function toggleElement() {
+      const container = document.getElementById("container");
+      const existing = document.getElementById("newElement");
+
+      if (existing) {
+        container.removeChild(existing);
+      } else {
+        const newElement = document.createElement("p");
+        newElement.id = "newElement";
+        newElement.textContent = "I'm a new element!";
+        container.appendChild(newElement);
+      }
+    }
+  </script>
+
+</body>
+</html>
